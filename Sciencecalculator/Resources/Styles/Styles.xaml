@@ -25,7 +25,7 @@
         <Setter Property="FontFamily" Value="RegularFont" />
         <Setter Property="TextColor" Value="White" />
         <Setter Property="BackgroundColor" Value="#202731" />
-        <Setter Property="BorderWidth" Value="#0" />
+        <Setter Property="BorderWidth" Value="0" />
         <Setter Property="BorderColor" Value="{StaticResource BorderColour}" />
         <Setter Property="VerticalOptions" Value="Fill" />
         <Setter Property="HorizontalOptions" Value="Fill" />
@@ -40,7 +40,7 @@
         <Setter Property="FontFamily" Value="RegularFont" />
         <Setter Property="TextColor" Value="Black" />
         <Setter Property="BackgroundColor" Value="#efbb31" />
-        <Setter Property="BorderWidth" Value="#0" />
+        <Setter Property="BorderWidth" Value="0" />
         <Setter Property="BorderColor" Value="{StaticResource BorderColour}" />
         <Setter Property="VerticalOptions" Value="Fill" />
         <Setter Property="HorizontalOptions" Value="Fill" />
