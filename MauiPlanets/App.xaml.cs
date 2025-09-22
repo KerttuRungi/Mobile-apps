@@ -1,4 +1,5 @@
-﻿#if WINDOWS
+﻿using MauiPlanets.Views;
+#if WINDOWS
 using Microsoft.UI;
 using Microsoft.UI.Windowing;
 using Windows.Graphics;
@@ -8,30 +9,36 @@ namespace MauiPlanets
 {
     public partial class App : Application
     {
-        const int WindowWidth = 720;
-        const int WindowHeight = 1280;
+        const int WindowWidth = 1080;
+        const int WindowHeight = 1920;
+
         public App()
         {
             InitializeComponent();
+            MainPage = new StartPage();
+        }
 
-            Microsoft.Maui.Handlers.WindowHandler.Mapper.AppendToMapping(nameof(IWindow), (handler, view) =>
+#if WINDOWS
+        protected override Window CreateWindow(IActivationState? activationState)
+        {
+            var window = base.CreateWindow(activationState);
+
+            window.HandlerChanged += (s, e) =>
             {
-                #if WINDOWS
-                var mauiWindow = handler.VirtualView;
-                var nativeWindow = handler.PlatformView;
-                nativeWindow.Activate();
+                var nativeWindow = window.Handler.PlatformView;
                 IntPtr windowHandle = WinRT.Interop.WindowNative.GetWindowHandle(nativeWindow);
                 WindowId windowId = Microsoft.UI.Win32Interop.GetWindowIdFromWindow(windowHandle);
                 AppWindow appWindow = Microsoft.UI.Windowing.AppWindow.GetFromWindowId(windowId);
-                appWindow.Resize(new SizeInt32(WindowWidth, WindowHeight));
-                #endif
-            });
 
-        }
+                if (appWindow != null)
+                {
+                    appWindow.Resize(new SizeInt32(WindowWidth, WindowHeight));
+                    appWindow.Show(); // Ensure the window is activated
+                }
+            };
 
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new AppShell());
+            return window;
         }
+#endif
     }
 }
