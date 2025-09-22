@@ -48,11 +48,12 @@
             Grid.ColumnSpan="5">
 
             <Label 
-                Text="="
-                VerticalOptions="Center"
-                VerticalTextAlignment="Center"
-                Style="{StaticResource EqualsLableStyle}"
-                Margin="16,0"/>
+            Text="{Binding CalculatedResult, Mode=OneWay}"
+            VerticalOptions="Center"
+            VerticalTextAlignment="Center"
+            HorizontalOptions="End"
+            Grid.Column="1"
+            Margin="16,0"/>
         </Grid>
         <!--Scientific Operators-->
         <!--Row 1-->
@@ -401,8 +402,7 @@
             ZIndex="1"
             Style="{StaticResource OperatorButtonStyle}"
             Text="="
-            Command="{Binding CalculateCommand}"
-            CommandParameter="="/>
+            Command="{Binding CalculateCommand}"/>
 
 
 
