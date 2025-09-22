@@ -30,14 +30,14 @@ namespace Sciencecalculator.ViewModels
         [RelayCommand]
         private void Calculate()
         {
-            if (inputText.Length == 0)
+            if (InputText.Length == 0)
             {
                 return;
             }
 
             if (isSciOpWaiting)
             {
-                inputText += ")";
+                InputText += ")";
                 isSciOpWaiting = false;
             }
 
@@ -59,20 +59,20 @@ namespace Sciencecalculator.ViewModels
         {
             Dictionary<string, string> _opMapper = new()
             {
-                {"x", "*" },
-                { "÷", "/" },
-                { "SIN", "Sin"},
-                { "COS", "Cos"},
-                { "TAN", "Tan"},
-                { "ASIN", "Asin"},
-                { "ACOS", "Acos"},
-                { "ATAN", "Atan"},
-                { "LOG", "Log"},
-                { "EXP", "Exp"},
-                { "LOG10", "Log10"},
-                { "POW", "Pow"},
-                { "SQRT", "Sqrt"},
-                { "ABS", "Abs"},
+                {"×", "*"},
+                {"÷", "/"},
+                {"SIN", "Sin"},
+                {"COS", "Cos"},
+                {"TAN", "Tan"},
+                {"ASIN", "Asin"},
+                {"ACOS", "Acos"},
+                {"ATAN", "Atan"},
+                {"LOG", "Log"},
+                {"EXP", "Exp"},
+                {"LOG10", "Log10"},
+                {"POW", "Pow"},
+                {"SQRT", "Sqrt"},
+                {"ABS", "Abs"},
             };
 
             var retString = InputText;
@@ -108,7 +108,7 @@ namespace Sciencecalculator.ViewModels
                 InputText += ")";
                 isSciOpWaiting = false;
             }
-            InputText += $"{op}";
+            InputText += $" {op}";
         }
 
         [RelayCommand]
@@ -119,19 +119,14 @@ namespace Sciencecalculator.ViewModels
                 InputText += ")";
                 isSciOpWaiting = false;
             }
-            InputText += $"{op}";
+            InputText += $" {op}";
         }
 
         [RelayCommand]
         private void ScientificOperator(string op)
         {
-            
-            {
-                InputText += $"{op}(";
-                isSciOpWaiting = false;
-            }
-          
+            InputText += $"{op}(";
+            isSciOpWaiting = false;
         }
-
     }
 }

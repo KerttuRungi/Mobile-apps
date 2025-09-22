@@ -395,14 +395,15 @@
          CommandParameter="⌫" />
 
         <Button
-        Grid.Row="9"
-        Grid.Column="3"
-        Grid.ColumnSpan="2" 
-        ZIndex="1"
-        Style="{StaticResource OperatorButtonStyle}"
-        Text="=" 
-        Command="{Binding CalculateCommand }"
-        CommandParameter="=" />
+            Grid.Row="9"
+            Grid.Column="3"
+            Grid.ColumnSpan="2"
+            ZIndex="1"
+            Style="{StaticResource OperatorButtonStyle}"
+            Text="="
+            Command="{Binding CalculateCommand}"
+            CommandParameter="="/>
+
 
 
 
