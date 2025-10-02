@@ -155,7 +155,6 @@ namespace MauiPlanets.Services
             },
         };
 
-
         public static List<Planet> GetFeaturedPlanets()
         {
             var random = new Random();

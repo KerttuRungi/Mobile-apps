@@ -6,21 +6,24 @@ namespace MauiPlanets.Views;
 public partial class PlanetsPage : ContentPage
 {
     private const uint AnimationDuration = 800u;
+
     public PlanetsPage()
-	{
-		InitializeComponent();
-	}
+    {
+        InitializeComponent();
+    }
+
     protected override void OnAppearing()
     {
         base.OnAppearing();
 
         lstPopularPlanets.ItemsSource = PlanetsService.GetFeaturedPlanets();
         lstAllPlanets.ItemsSource = PlanetsService.GetAllPlanets();
+        lstAllDwarfPlanets.ItemsSource = DwarfPlanetServices.GetAllDwarfPlanets();
     }
 
-    async void Planets_SelectionChanged(System.Object sender, Microsoft.Maui.Controls.SelectedItemChangedEventArgs e)
+    async void Planets_SelectionChanged(System.Object sender, Microsoft.Maui.Controls.SelectionChangedEventArgs e)
     {
-        //await Navigation.PushAsync(new PlanetsDetailsPage(e.CurrentSelection.First() as Planet));
+        await Navigation.PushAsync(new PlanetDetailsPage(e.CurrentSelection.First() as Planet));
     }
 
 
