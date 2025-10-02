@@ -238,7 +238,7 @@
                         x:Name="lstAllDwarfPlanets"
                         HeightRequest="160"
                         SelectionMode="Single"
-                        SelectionChanged="Planets_SelectionChanged">
+                        SelectionChanged="DwarfPlanets_SelectionChanged">
 
                         <CollectionView.ItemsLayout>
                             <LinearItemsLayout 

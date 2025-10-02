@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MauiPlanets.Models
 {
-    internal class DwarfPlanet
+    internal class DwarfPlanet : Planet
     {
         public string Name { get; set; }
         public string Subtitle { get; set; }
