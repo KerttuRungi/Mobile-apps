@@ -46,7 +46,7 @@ namespace MauiPlanets.Services
             {
                 Name = "Haumea",
                 Subtitle = "One of the fastest rotating large objects in our solar system",
-                HeroImage = "hauema.png",
+                HeroImage = "haumea.png",
                 Description = "Haumea is located in the Kuiper Belts, a doughnut-shaped region of icy bodies beyond the orbit of Neptune",
                 AccentColorStart = Color.FromArgb("#353535"),
                 AccentColorEnd = Color.FromArgb("#8d9098"),
